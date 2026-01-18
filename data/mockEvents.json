@@ -1,0 +1,54 @@
+[
+  {
+    "id": "1",
+    "title": "Soirée Networking Tech",
+    "description": "Rencontre entre développeurs et entrepreneurs tech",
+    "date": "2024-01-20T19:00:00Z",
+    "location": "Paris, 75001",
+    "type": "public",
+    "organizerId": "2",
+    "organizerName": "Bob Dupont",
+    "participants": 45,
+    "maxParticipants": 100,
+    "image": "🎯"
+  },
+  {
+    "id": "2",
+    "title": "Atelier Photo",
+    "description": "Apprenez les bases de la photographie avec un pro",
+    "date": "2024-01-22T14:00:00Z",
+    "location": "Lyon, 69001",
+    "type": "public",
+    "organizerId": "1",
+    "organizerName": "Alice Martin",
+    "participants": 12,
+    "maxParticipants": 20,
+    "image": "📸"
+  },
+  {
+    "id": "3",
+    "title": "Dégustation Vins",
+    "description": "Découverte de vins locaux au restaurant Le Gourmet",
+    "date": "2024-01-25T20:00:00Z",
+    "location": "Paris, 75011",
+    "type": "public",
+    "organizerId": "4",
+    "organizerName": "Marc Pro",
+    "participants": 8,
+    "maxParticipants": 15,
+    "image": "🍷"
+  },
+  {
+    "id": "4",
+    "title": "Anniversaire Privé",
+    "description": "Fête d'anniversaire entre amis",
+    "date": "2024-01-18T18:00:00Z",
+    "location": "Marseille, 13001",
+    "type": "private",
+    "organizerId": "3",
+    "organizerName": "Sophie Créatrice",
+    "participants": 5,
+    "maxParticipants": 10,
+    "image": "🎂"
+  }
+]

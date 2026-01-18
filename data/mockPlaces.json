@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "name": "Café Central",
+    "address": "12 Rue de la Paix, 75001 Paris",
+    "distance": "0.5 km",
+    "qrCode": "QR-TCHIL-CAFE-001",
+    "type": "café"
+  },
+  {
+    "id": "2",
+    "name": "Restaurant Le Gourmet",
+    "address": "45 Avenue des Champs, 75011 Paris",
+    "distance": "1.2 km",
+    "qrCode": "QR-TCHIL-RESTAURANT-002",
+    "type": "restaurant"
+  },
+  {
+    "id": "3",
+    "name": "Bibliothèque Municipale",
+    "address": "8 Place de la République, 69001 Lyon",
+    "distance": "2.5 km",
+    "qrCode": "QR-TCHIL-BIBLIO-003",
+    "type": "bibliothèque"
+  },
+  {
+    "id": "4",
+    "name": "Parc Central",
+    "address": "Parc de la Tête d'Or, 69006 Lyon",
+    "distance": "3.8 km",
+    "qrCode": "QR-TCHIL-PARC-004",
+    "type": "parc"
+  }
+]

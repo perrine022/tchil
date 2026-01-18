@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "authorId": "1",
+    "authorName": "Alice Martin",
+    "authorAvatar": "👩",
+    "content": "Superbe journée à Paris aujourd'hui ! ☀️",
+    "image": "📷",
+    "likes": 42,
+    "comments": 8,
+    "isLiked": false,
+    "timestamp": "2024-01-15T10:30:00Z"
+  },
+  {
+    "id": "2",
+    "authorId": "3",
+    "authorName": "Sophie Créatrice",
+    "authorAvatar": "👩‍🎨",
+    "content": "Nouveau contenu en préparation... Stay tuned ! 🎨",
+    "image": "🎬",
+    "likes": 128,
+    "comments": 24,
+    "isLiked": true,
+    "timestamp": "2024-01-15T09:15:00Z"
+  },
+  {
+    "id": "3",
+    "authorId": "4",
+    "authorName": "Marc Pro",
+    "authorAvatar": "👔",
+    "content": "Menu du jour disponible ! Réservez votre table 🍽️",
+    "image": "🍴",
+    "likes": 56,
+    "comments": 12,
+    "isLiked": false,
+    "timestamp": "2024-01-15T08:00:00Z"
+  },
+  {
+    "id": "4",
+    "authorId": "2",
+    "authorName": "Bob Dupont",
+    "authorAvatar": "👨",
+    "content": "Just shipped a new feature! 🚀",
+    "image": "💻",
+    "likes": 89,
+    "comments": 15,
+    "isLiked": false,
+    "timestamp": "2024-01-14T18:45:00Z"
+  }
+]

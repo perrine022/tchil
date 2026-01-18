@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "name": "T-shirt Tchil",
+    "description": "T-shirt 100% coton avec logo Tchil",
+    "price": 24.99,
+    "image": "👕",
+    "category": "vêtements"
+  },
+  {
+    "id": "2",
+    "name": "Casquette Tchil",
+    "description": "Casquette ajustable avec logo brodé",
+    "price": 19.99,
+    "image": "🧢",
+    "category": "accessoires"
+  },
+  {
+    "id": "3",
+    "name": "Sac à dos Tchil",
+    "description": "Sac à dos pratique et résistant",
+    "price": 49.99,
+    "image": "🎒",
+    "category": "accessoires"
+  },
+  {
+    "id": "4",
+    "name": "Gourde Tchil",
+    "description": "Gourde en inox isotherme 500ml",
+    "price": 29.99,
+    "image": "🥤",
+    "category": "accessoires"
+  },
+  {
+    "id": "5",
+    "name": "Stickers Pack",
+    "description": "Pack de 10 stickers Tchil",
+    "price": 9.99,
+    "image": "🖼️",
+    "category": "accessoires"
+  }
+]

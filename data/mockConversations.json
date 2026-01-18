@@ -1,0 +1,64 @@
+{
+  "1": [
+    {
+      "id": "1",
+      "senderId": "1",
+      "senderName": "Alice Martin",
+      "content": "Salut ! Ça te dit de se voir ce weekend ?",
+      "timestamp": "2024-01-15T10:30:00Z",
+      "type": "text"
+    },
+    {
+      "id": "2",
+      "senderId": "current",
+      "senderName": "Moi",
+      "content": "Oui avec plaisir ! Tu as un endroit en tête ?",
+      "timestamp": "2024-01-15T10:32:00Z",
+      "type": "text"
+    },
+    {
+      "id": "3",
+      "senderId": "1",
+      "senderName": "Alice Martin",
+      "content": "On pourrait aller au parc, il fait beau !",
+      "timestamp": "2024-01-15T10:35:00Z",
+      "type": "text"
+    }
+  ],
+  "3": [
+    {
+      "id": "1",
+      "senderId": "3",
+      "senderName": "Sophie Créatrice",
+      "content": "Merci pour le like ! 😊",
+      "timestamp": "2024-01-15T09:15:00Z",
+      "type": "text"
+    },
+    {
+      "id": "2",
+      "senderId": "current",
+      "senderName": "Moi",
+      "content": "De rien, j'adore ton contenu !",
+      "timestamp": "2024-01-15T09:20:00Z",
+      "type": "text"
+    }
+  ],
+  "4": [
+    {
+      "id": "1",
+      "senderId": "4",
+      "senderName": "Marc Pro",
+      "content": "Venez découvrir notre nouveau menu !",
+      "timestamp": "2024-01-14T18:00:00Z",
+      "type": "text"
+    },
+    {
+      "id": "2",
+      "senderId": "4",
+      "senderName": "Marc Pro",
+      "content": "🍽️",
+      "timestamp": "2024-01-14T18:01:00Z",
+      "type": "emoji"
+    }
+  ]
+}
