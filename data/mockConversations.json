@@ -30,7 +30,7 @@
       "id": "1",
       "senderId": "3",
       "senderName": "Sophie Créatrice",
-      "content": "Merci pour le like ! 😊",
+      "content": "Merci pour le like !",
       "timestamp": "2024-01-15T09:15:00Z",
       "type": "text"
     },
@@ -56,7 +56,7 @@
       "id": "2",
       "senderId": "4",
       "senderName": "Marc Pro",
-      "content": "🍽️",
+      "content": "◉",
       "timestamp": "2024-01-14T18:01:00Z",
       "type": "emoji"
     }

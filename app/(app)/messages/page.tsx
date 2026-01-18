@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import { useStore } from '@/lib/store';
 import mockMessages from '@/data/mockMessages.json';
@@ -51,25 +52,42 @@ export default function MessagesPage() {
       <Header title="Messages" />
       
       {limitedMessage && (
-        <div className="mx-4 mt-4 rounded-lg border-2 border-black bg-black/5 p-4">
+        <div className="mx-4 mt-4 rounded-2xl bg-black/5 p-4 shadow-sm">
           <p className="text-sm text-black/70">{limitedMessage}</p>
         </div>
       )}
 
-      <div className="divide-y divide-black/10">
-        {conversations.map((conv) => (
-          <Link key={conv.id} href={`/messages/${conv.id}`}>
-            <div className="p-4 flex items-center gap-4">
-              <div className="text-4xl">{conv.userAvatar}</div>
-              <div className="flex-1">
+      <div className="px-4 py-2 space-y-2">
+        {conversations.map((conv, index) => (
+          <Link 
+            key={conv.id} 
+            href={`/messages/${conv.id}`}
+            className="block animate-fade-in"
+            style={{ animationDelay: `${index * 0.05}s` }}
+          >
+            <div className="p-4 flex items-center gap-4 bg-white rounded-2xl shadow-md hover-lift active:scale-[0.98] transition-all">
+              {(conv as { userAvatarUrl?: string }).userAvatarUrl ? (
+                <Image 
+                  src={(conv as { userAvatarUrl: string }).userAvatarUrl} 
+                  alt={conv.userName}
+                  width={56}
+                  height={56}
+                  className="rounded-2xl object-cover"
+                />
+              ) : (
+                <div className="text-5xl bg-gradient-to-br from-black/5 to-black/10 rounded-2xl p-2">
+                  {conv.userAvatar}
+                </div>
+              )}
+              <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between mb-1">
-                  <h3 className="font-semibold">{conv.userName}</h3>
-                  <span className="text-xs text-black/60">{formatTime(conv.timestamp)}</span>
+                  <h3 className="font-semibold truncate">{conv.userName}</h3>
+                  <span className="text-xs text-black/60 ml-2 flex-shrink-0">{formatTime(conv.timestamp)}</span>
                 </div>
                 <p className="text-sm text-black/60 line-clamp-1">{conv.lastMessage}</p>
               </div>
               {conv.unread > 0 && (
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-black text-xs font-bold text-white">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-black text-xs font-bold text-white shadow-lg flex-shrink-0 animate-scale-in">
                   {conv.unread}
                 </span>
               )}

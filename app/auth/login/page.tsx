@@ -158,13 +158,13 @@ export default function LoginPage() {
               onClick={() => handleSocialLogin('Apple')}
               className="w-full rounded-lg border-2 border-black bg-white px-6 py-4 text-center font-semibold text-black transition-opacity hover:opacity-80"
             >
-              🍎 Continuer avec Apple
+              ◉ Continuer avec Apple
             </button>
             <button
               onClick={() => handleSocialLogin('Google')}
               className="w-full rounded-lg border-2 border-black bg-white px-6 py-4 text-center font-semibold text-black transition-opacity hover:opacity-80"
             >
-              🔍 Continuer avec Google
+              ◉ Continuer avec Google
             </button>
           </div>
         )}

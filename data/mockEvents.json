@@ -10,7 +10,8 @@
     "organizerName": "Bob Dupont",
     "participants": 45,
     "maxParticipants": 100,
-    "image": "🎯"
+    "image": "◉",
+    "imageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop"
   },
   {
     "id": "2",
@@ -23,7 +24,8 @@
     "organizerName": "Alice Martin",
     "participants": 12,
     "maxParticipants": 20,
-    "image": "📸"
+    "image": "◉",
+    "imageUrl": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=600&fit=crop"
   },
   {
     "id": "3",
@@ -36,7 +38,8 @@
     "organizerName": "Marc Pro",
     "participants": 8,
     "maxParticipants": 15,
-    "image": "🍷"
+    "image": "◉",
+    "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&h=600&fit=crop"
   },
   {
     "id": "4",
@@ -49,6 +52,7 @@
     "organizerName": "Sophie Créatrice",
     "participants": 5,
     "maxParticipants": 10,
-    "image": "🎂"
+    "image": "◉",
+    "imageUrl": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&h=600&fit=crop"
   }
 ]

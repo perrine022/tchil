@@ -17,6 +17,7 @@ export interface User {
   verificationStatus: VerificationStatus;
   plan: PlanType;
   avatar?: string;
+  avatarUrl?: string;
   bio?: string;
 }
 

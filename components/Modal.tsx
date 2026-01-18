@@ -25,22 +25,22 @@ export default function Modal({ isOpen, onClose, title, children }: ModalProps) 
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 md:max-w-[420px] md:mx-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 md:max-w-[420px] md:mx-auto animate-fade-in"
       onClick={onClose}
     >
       <div
-        className="w-full max-w-md bg-white rounded-lg shadow-lg border border-black"
+        className="w-full max-w-md bg-white rounded-2xl shadow-2xl border-2 border-black animate-scale-in"
         onClick={(e) => e.stopPropagation()}
       >
         {title && (
-          <div className="flex items-center justify-between border-b border-black px-4 py-3">
+          <div className="flex items-center justify-between border-b-2 border-black px-4 py-3 bg-black/5">
             <h2 className="text-lg font-semibold">{title}</h2>
             <button
               onClick={onClose}
-              className="flex items-center justify-center w-8 h-8"
+              className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-black/10 transition-all active:scale-95"
               aria-label="Fermer"
             >
-              <span className="text-xl">×</span>
+              <span className="text-xl transition-transform hover:rotate-90">✕</span>
             </button>
           </div>
         )}

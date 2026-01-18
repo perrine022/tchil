@@ -79,33 +79,46 @@ export default function CheckInPage() {
       </div>
 
       {mode === 'map' && (
-        <div className="p-4 space-y-4">
-          <div className="rounded-lg border-2 border-black p-4 bg-black/5">
-            <p className="text-sm text-black/70 mb-2">
-              Check-in aujourd'hui: {checkInLimits.daily}/3
-            </p>
-            <p className="text-sm text-black/70">
-              Check-in cette semaine: {checkInLimits.weekly}/10
-            </p>
+        <div className="px-4 py-6 space-y-6">
+          {/* Stats élégantes */}
+          <div className="flex items-center gap-4 bg-white rounded-2xl p-4 shadow-sm">
+            <div className="flex-1">
+              <p className="text-xs text-black/50 mb-1">Aujourd'hui</p>
+              <p className="text-lg font-semibold">
+                {checkInLimits.daily}/3
+              </p>
+            </div>
+            <div className="w-px h-8 bg-black/10" />
+            <div className="flex-1">
+              <p className="text-xs text-black/50 mb-1">Cette semaine</p>
+              <p className="text-lg font-semibold">
+                {checkInLimits.weekly}/10
+              </p>
+            </div>
           </div>
 
+          {/* Liste des lieux */}
           <div className="space-y-3">
-            {places.map((place) => (
-              <div key={place.id} className="border-2 border-black rounded-lg p-4">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <h3 className="font-semibold">{place.name}</h3>
-                    <p className="text-sm text-black/60 mt-1">{place.address}</p>
-                    <p className="text-xs text-black/60 mt-1">{place.distance}</p>
+            {places.map((place, index) => (
+              <div 
+                key={place.id} 
+                className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all active:scale-[0.98] animate-fade-in"
+                style={{ animationDelay: `${index * 0.05}s` }}
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-base mb-1">{place.name}</h3>
+                    <p className="text-sm text-black/60 leading-relaxed">{place.address}</p>
+                    <p className="text-xs text-black/50 mt-1.5">{place.distance}</p>
                   </div>
                   <button
                     onClick={() => {
                       setMode('scanner');
                       setQrCode(place.qrCode);
                     }}
-                    className="text-sm font-medium text-black underline"
+                    className="text-sm font-medium text-black/70 hover:text-black px-3 py-1.5 rounded-xl hover:bg-black/5 transition-all active:scale-95 flex-shrink-0"
                   >
-                    Voir
+                    Scanner →
                   </button>
                 </div>
               </div>
@@ -115,45 +128,57 @@ export default function CheckInPage() {
       )}
 
       {mode === 'scanner' && (
-        <div className="p-6 space-y-6">
-          <div className="space-y-4">
-            <div className="flex items-center justify-center h-64 bg-black/5 rounded-lg border-2 border-dashed border-black">
-              <div className="text-center">
-                <div className="text-6xl mb-4">📷</div>
-                <p className="text-sm text-black/60">Scanner QR Code</p>
-              </div>
+        <div className="px-6 py-6 space-y-6">
+          {/* Zone de scan */}
+          <div className="relative flex items-center justify-center h-64 bg-gradient-to-br from-black/5 to-black/10 rounded-2xl overflow-hidden">
+            <div className="absolute inset-0 border-2 border-dashed border-black/20 rounded-2xl m-4" />
+            <div className="text-center z-10">
+              <div className="text-6xl mb-3 opacity-50">◉</div>
+              <p className="text-sm text-black/60 font-medium">Scanner QR Code</p>
             </div>
-            
-            <div>
-              <label className="block text-sm font-medium mb-2">
-                Ou entrez le code QR manuellement
-              </label>
-              <input
-                type="text"
-                value={qrCode}
-                onChange={(e) => setQrCode(e.target.value.toUpperCase())}
-                placeholder="QR-TCHIL-XXX"
-                className="w-full rounded-lg border-2 border-black px-4 py-3 font-mono"
-              />
-            </div>
-
-            <div className="rounded-lg border-2 border-black p-4 bg-black/5">
-              <p className="text-sm font-medium mb-2">Limites actuelles</p>
-            <p className="text-xs text-black/70">
-              Aujourd'hui: {checkInLimits.daily}/3
-            </p>
-            <p className="text-xs text-black/70">
-              Cette semaine: {checkInLimits.weekly}/10
-            </p>
+          </div>
+          
+          {/* Input manuel */}
+          <div className="space-y-2">
+            <label className="block text-sm font-medium text-black/70">
+              Ou entrez le code QR manuellement
+            </label>
+            <input
+              type="text"
+              value={qrCode}
+              onChange={(e) => setQrCode(e.target.value.toUpperCase())}
+              placeholder="QR-TCHIL-XXX"
+              className="w-full rounded-xl bg-black/5 px-4 py-3 font-mono focus:outline-none focus:ring-2 focus:ring-black/20 transition-all"
+            />
           </div>
 
+          {/* Stats limites */}
+          <div className="bg-white rounded-2xl p-4 shadow-sm">
+            <p className="text-sm font-medium mb-3 text-black/80">Limites actuelles</p>
+            <div className="flex items-center gap-4">
+              <div className="flex-1">
+                <p className="text-xs text-black/50 mb-1">Aujourd'hui</p>
+                <p className="text-base font-semibold">
+                  {checkInLimits.daily}/3
+                </p>
+              </div>
+              <div className="w-px h-8 bg-black/10" />
+              <div className="flex-1">
+                <p className="text-xs text-black/50 mb-1">Cette semaine</p>
+                <p className="text-base font-semibold">
+                  {checkInLimits.weekly}/10
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bouton validation */}
           <button
             onClick={handleScan}
-            className="w-full rounded-lg border-2 border-black bg-black text-white px-6 py-4 font-semibold"
+            className="w-full rounded-2xl bg-black text-white px-6 py-4 font-semibold hover-lift active:scale-95 shadow-xl transition-all"
           >
             Valider le check-in
           </button>
-        </div>
         </div>
       )}
     </div>

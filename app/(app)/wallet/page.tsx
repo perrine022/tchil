@@ -38,7 +38,7 @@ export default function WalletPage() {
               className="text-xl"
               aria-label="Afficher/Masquer le solde"
             >
-              {showBalance ? '👁️' : '🙈'}
+              {showBalance ? '◉' : '○'}
             </button>
           </div>
           <div className="text-4xl font-bold">

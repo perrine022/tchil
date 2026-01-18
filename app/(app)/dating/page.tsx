@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import { useStore } from '@/lib/store';
 import mockUsers from '@/data/mockUsers.json';
@@ -97,7 +98,7 @@ export default function DatingPage() {
           title="Rencontres" 
           rightAction={
             <button onClick={() => setShowFilters(!showFilters)} className="text-xl">
-              ⚙️
+              ⚙
             </button>
           }
         />
@@ -114,7 +115,7 @@ export default function DatingPage() {
         title="Rencontres" 
         rightAction={
           <button onClick={() => setShowFilters(!showFilters)} className="text-xl">
-            ⚙️
+            ⚙
           </button>
         }
       />
@@ -161,7 +162,7 @@ export default function DatingPage() {
         </div>
       )}
 
-      <div className="flex items-center justify-center min-h-[calc(100vh-200px)] p-4">
+      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-200px)] p-4 space-y-6">
         <div
           className="relative w-full max-w-sm"
           style={{
@@ -176,37 +177,58 @@ export default function DatingPage() {
           onMouseUp={handleDragEnd}
           onMouseLeave={handleDragEnd}
         >
-          <div className="border-2 border-black rounded-lg bg-white p-6 space-y-4">
-            <div className="flex items-center justify-center h-64 bg-black/5 rounded-lg text-8xl">
-              {currentUser.avatar}
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold">{currentUser.name}, {currentUser.age}</h2>
-              <p className="text-black/60">{currentUser.location}</p>
-              <p className="text-sm text-black/60 mt-1">{currentUser.distance}</p>
-            </div>
-            {currentUser.bio && (
-              <p className="text-black/70">{currentUser.bio}</p>
+          <div className="bg-white rounded-3xl overflow-hidden shadow-2xl">
+            {/* Photo en grand */}
+            {(currentUser as { avatarUrl?: string }).avatarUrl ? (
+              <div className="relative h-[60vh] overflow-hidden">
+                <Image 
+                  src={(currentUser as { avatarUrl: string }).avatarUrl} 
+                  alt={currentUser.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ) : (
+              <div className="flex items-center justify-center h-[60vh] bg-gradient-to-br from-black/5 to-black/10">
+                <span className="text-9xl transition-transform hover:scale-110">{currentUser.avatar}</span>
+              </div>
             )}
+            
+            {/* Infos en dessous */}
+            <div className="px-6 py-5 space-y-3 bg-white">
+              <div className="space-y-1">
+                <h2 className="text-3xl font-bold">{currentUser.name}, {currentUser.age}</h2>
+                <div className="flex items-center gap-2 text-black/60">
+                  <span>{currentUser.location}</span>
+                  <span>•</span>
+                  <span>{currentUser.distance}</span>
+                </div>
+              </div>
+              
+              {currentUser.bio && (
+                <p className="text-black/70 leading-relaxed text-sm">{currentUser.bio}</p>
+              )}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="fixed bottom-20 left-0 right-0 flex items-center justify-center gap-6 p-4 md:left-1/2 md:right-auto md:-translate-x-1/2 md:max-w-[420px]">
-        <button
-          onClick={handlePass}
-          className="flex items-center justify-center w-16 h-16 rounded-full border-2 border-black bg-white text-2xl"
-          aria-label="Passer"
-        >
-          ✕
-        </button>
-        <button
-          onClick={handleLike}
-          className="flex items-center justify-center w-16 h-16 rounded-full border-2 border-black bg-black text-white text-2xl"
-          aria-label="Aimer"
-        >
-          ❤️
-        </button>
+        {/* Boutons d'action sous la carte */}
+        <div className="flex items-center justify-center gap-6 w-full max-w-sm">
+          <button
+            onClick={handlePass}
+            className="flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-lg hover:shadow-xl active:scale-90 transition-all"
+            aria-label="Passer"
+          >
+            <span className="text-2xl transition-transform hover:rotate-90">✕</span>
+          </button>
+          <button
+            onClick={handleLike}
+            className="flex items-center justify-center w-16 h-16 rounded-full bg-black text-white shadow-lg hover:shadow-xl active:scale-90 transition-all"
+            aria-label="Aimer"
+          >
+            <span className="text-2xl transition-transform hover:scale-125">♥</span>
+          </button>
+        </div>
       </div>
     </div>
   );

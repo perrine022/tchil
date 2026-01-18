@@ -3,7 +3,8 @@
     "id": "1",
     "userId": "1",
     "userName": "Alice Martin",
-    "userAvatar": "👩",
+    "userAvatar": "◯",
+    "userAvatarUrl": "https://i.pravatar.cc/150?img=12",
     "lastMessage": "Salut ! Ça te dit de se voir ce weekend ?",
     "timestamp": "2024-01-15T10:30:00Z",
     "unread": 2
@@ -12,8 +13,9 @@
     "id": "2",
     "userId": "3",
     "userName": "Sophie Créatrice",
-    "userAvatar": "👩‍🎨",
-    "lastMessage": "Merci pour le like ! 😊",
+    "userAvatar": "◯",
+    "userAvatarUrl": "https://i.pravatar.cc/150?img=47",
+    "lastMessage": "Merci pour le like !",
     "timestamp": "2024-01-15T09:15:00Z",
     "unread": 0
   },
@@ -21,7 +23,8 @@
     "id": "3",
     "userId": "4",
     "userName": "Marc Pro",
-    "userAvatar": "👔",
+    "userAvatar": "◯",
+    "userAvatarUrl": "https://i.pravatar.cc/150?img=68",
     "lastMessage": "Venez découvrir notre nouveau menu !",
     "timestamp": "2024-01-14T18:00:00Z",
     "unread": 1
